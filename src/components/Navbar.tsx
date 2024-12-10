@@ -4,8 +4,8 @@ import {
   Text,
   useColorModeValue,
   FlexProps,
+  Icon,
 } from '@chakra-ui/react';
-import { FiMenu } from 'react-icons/fi';
 
 interface NavbarProps extends FlexProps {
   onOpen: () => void;
@@ -28,7 +28,19 @@ export default function Navbar({ onOpen, ...rest }: NavbarProps) {
         onClick={onOpen}
         variant="outline"
         aria-label="open menu"
-        icon={<FiMenu />}
+        icon={
+          <Icon
+            boxSize={6}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </Icon>
+        }
       />
 
       <Text

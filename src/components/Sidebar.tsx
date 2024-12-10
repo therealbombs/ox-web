@@ -9,7 +9,6 @@ import {
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FiHome, FiCreditCard, FiLogOut } from 'react-icons/fi';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
@@ -17,9 +16,36 @@ interface SidebarProps extends BoxProps {
 
 interface LinkItemProps {
   name: string;
-  icon: any;
+  icon: React.ComponentType<any>;
   path: string;
 }
+
+const HomeIcon = (props: any) => (
+  <Icon viewBox="0 0 24 24" {...props}>
+    <path
+      fill="currentColor"
+      d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+    />
+  </Icon>
+);
+
+const CreditCardIcon = (props: any) => (
+  <Icon viewBox="0 0 24 24" {...props}>
+    <path
+      fill="currentColor"
+      d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V6h18v12z"
+    />
+  </Icon>
+);
+
+const LogoutIcon = (props: any) => (
+  <Icon viewBox="0 0 24 24" {...props}>
+    <path
+      fill="currentColor"
+      d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"
+    />
+  </Icon>
+);
 
 export default function Sidebar({ onClose, ...rest }: SidebarProps) {
   const { t } = useTranslation();
@@ -27,9 +53,9 @@ export default function Sidebar({ onClose, ...rest }: SidebarProps) {
   const location = useLocation();
 
   const LinkItems: Array<LinkItemProps> = [
-    { name: t('dashboard.menu.dashboard'), icon: FiHome, path: '/dashboard' },
-    { name: t('dashboard.menu.accounts'), icon: FiCreditCard, path: '/accounts' },
-    { name: t('dashboard.menu.logout'), icon: FiLogOut, path: '/logout' },
+    { name: t('dashboard.menu.dashboard'), icon: HomeIcon, path: '/dashboard' },
+    { name: t('dashboard.menu.accounts'), icon: CreditCardIcon, path: '/accounts' },
+    { name: t('dashboard.menu.logout'), icon: LogoutIcon, path: '/logout' },
   ];
 
   const handleNavigation = (path: string) => {
