@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview --port 3000"
+    "preview": "vite preview --port 3000",
+    "start": "vite preview --port $PORT --host 0.0.0.0"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -20,7 +21,8 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.5.0",
     "react-redux": "^9.0.4",
-    "react-router-dom": "^6.21.0"
+    "react-router-dom": "^6.21.0",
+    "vite": "^5.0.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -31,7 +33,6 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "typescript": "^5.2.2"
   }
 }
