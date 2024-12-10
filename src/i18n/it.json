@@ -1,0 +1,27 @@
+{
+  "login": {
+    "title": "Accesso",
+    "clientId": "ID Cliente",
+    "abi": "ABI",
+    "password": "Password",
+    "submit": "Accedi",
+    "error": "Credenziali non valide"
+  },
+  "dashboard": {
+    "welcome": "Benvenuto",
+    "totalBalance": "Saldo Totale",
+    "accounts": "Conti",
+    "menu": {
+      "dashboard": "Dashboard",
+      "accounts": "Conti",
+      "logout": "Esci"
+    }
+  },
+  "account": {
+    "balance": "Saldo",
+    "accountNumber": "Numero Conto",
+    "iban": "IBAN",
+    "type": "Tipo Conto",
+    "status": "Stato"
+  }
+}
