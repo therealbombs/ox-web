@@ -25,7 +25,6 @@ export interface Account {
   balance: number;
 }
 
-
 export const login = async (credentials: LoginCredentials) => {
   const response = await api.post('/auth/login', credentials);
   const token = response.data.token;
