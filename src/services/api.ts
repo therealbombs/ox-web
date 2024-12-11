@@ -46,9 +46,9 @@ export const getAccountBalance = async (accountId: string) => {
   return response.data;
 };
 
-export const getTotalBalance = async () => {
-  const response = await api.get('/accounts/total-balance');
-  return response.data;
+export const getTotalBalance = async (): Promise<number> => {
+  const accounts = await getAccounts();
+  return accounts.reduce((total, account) => total + (account.balance || 0), 0);
 };
 
 // Interceptor per gestire il token
