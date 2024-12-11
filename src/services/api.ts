@@ -15,7 +15,6 @@ export interface LoginCredentials {
   password: string;
 }
 
-
 export interface Account {
   accountId: string;
   abi: string;
